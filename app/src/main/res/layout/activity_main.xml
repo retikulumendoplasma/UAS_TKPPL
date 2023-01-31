@@ -54,11 +54,12 @@
 
             <EditText
                 android:id="@+id/et_tinggi_badan"
-                android:layout_width="70dp"
+                android:layout_width="100dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="20dp"
                 android:ems="3"
                 android:inputType="number"
+                android:maxLength="3"
                 android:text="0"
                 android:textSize="50sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -118,11 +119,12 @@
 
             <EditText
                 android:id="@+id/et_berat_badan"
-                android:layout_width="70dp"
+                android:layout_width="100dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="20dp"
                 android:ems="3"
                 android:inputType="number"
+                android:maxLength="3"
                 android:text="0"
                 android:textSize="50sp"
                 app:layout_constraintBottom_toBottomOf="parent"
