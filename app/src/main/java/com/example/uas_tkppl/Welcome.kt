@@ -24,14 +24,14 @@ class Welcome : AppCompatActivity() {
             //button gender
             img_btn_laki.setOnClickListener {
                 img_btn_laki.setImageDrawable(lakiClickedLight)
-                img_btn_wanita.setImageDrawable((wanitaUnclickedLight))
+                img_btn_wanita.setImageDrawable(wanitaUnclickedLight)
                 isLakiClicked = true
                 isWanitaClicked = false
             }
 
             img_btn_wanita.setOnClickListener {
                     img_btn_wanita.setImageDrawable(wanitaClickedLight)
-                    img_btn_laki.setImageDrawable((lakiUnclickedLight))
+                    img_btn_laki.setImageDrawable(lakiUnclickedLight)
                 isWanitaClicked = true
                 isLakiClicked = false
             }
