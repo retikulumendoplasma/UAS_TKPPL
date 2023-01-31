@@ -3,9 +3,14 @@ package com.example.uas_tkppl
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
+import com.example.tugas_tkkpl_e_call.helper.constant
+import com.example.tugas_tkkpl_e_call.helper.preferencesHelper
 import kotlinx.android.synthetic.main.activity_welcome.*
 
 class Welcome : AppCompatActivity() {
+    lateinit var sharedPref: preferencesHelper
+
 
     var isLakiClicked = false
     var isWanitaClicked = false
@@ -19,7 +24,11 @@ class Welcome : AppCompatActivity() {
         val wanitaClickedLight = resources.getDrawable(R.drawable.wanita_pressed_light)
         val wanitaUnclickedLight = resources.getDrawable(R.drawable.wanita_normal_light)
 
+        sharedPref = preferencesHelper(this)
 
+        if (sharedPref.getBoolean(constant.PREF_ISON) == true){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
 
             //button gender
             img_btn_laki.setOnClickListener {

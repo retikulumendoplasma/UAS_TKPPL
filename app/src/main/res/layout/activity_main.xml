@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/bglightmode">
+    style="@style/screen_light"
+    >
 
     <androidx.cardview.widget.CardView
+        style="@style/card_view"
         android:id="@+id/cv_tinggi"
         android:layout_width="304dp"
         android:layout_height="170dp"
@@ -22,16 +24,17 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            style="@style/card_view">
 
             <TextView
+                style="@style/tv_tinggi"
                 android:id="@+id/tv_tinggibadan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/roboto_medium"
                 android:text="Tinggi"
-                android:textColor="@color/alltext_Light"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.501"
@@ -39,13 +42,13 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                style="@style/tv_satuan_cm"
                 android:id="@+id/tv_satuan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:fontFamily="@font/roboto_medium"
                 android:text="CM"
-                android:textColor="@color/alltext_Light"
                 android:textSize="10sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.647"
@@ -55,12 +58,13 @@
             <EditText
                 android:id="@+id/et_tinggi_badan"
                 android:layout_width="100dp"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:ems="3"
                 android:inputType="number"
                 android:maxLength="3"
                 android:text="0"
+                android:gravity="center"
                 android:textSize="50sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -73,6 +77,7 @@
 
 
     <androidx.cardview.widget.CardView
+        style="@style/card_view"
         android:id="@+id/cv_berat"
         android:layout_width="304dp"
         android:layout_height="170dp"
@@ -87,22 +92,25 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            style="@style/card_view">
 
             <TextView
+                style="@style/tv_berat"
                 android:id="@+id/tv_beratbadan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/roboto_medium"
                 android:text="Berat"
-                android:textColor="@color/alltext_Light"
+
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                style="@style/tv_satuan_kg"
                 android:id="@+id/tv_kg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,7 +118,6 @@
                 android:layout_marginTop="36dp"
                 android:fontFamily="@font/roboto_medium"
                 android:text="KG"
-                android:textColor="@color/alltext_Light"
                 android:textSize="10sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.087"
@@ -120,12 +127,13 @@
             <EditText
                 android:id="@+id/et_berat_badan"
                 android:layout_width="100dp"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:ems="3"
                 android:inputType="number"
                 android:maxLength="3"
                 android:text="0"
+                android:gravity="center"
                 android:textSize="50sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

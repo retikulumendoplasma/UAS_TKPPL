@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bglightmode"
+    style="@style/screen_light"
     tools:context=".Welcome">
 
     <TextView
@@ -13,9 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="Pilih Jenis Kelamin"
-        android:textColor="#000000"
+        style="@style/tv_pilih_jenis_kelamin"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:fontFamily="@font/roboto_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,9 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="392dp"
         android:text="Usia"
-        android:textColor="#000000"
+        style="@style/tv_usia"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:fontFamily="@font/roboto_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -40,13 +42,12 @@
         android:layout_height="159dp"
         android:layout_marginStart="45dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/rounded_button_shape"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.007"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_JenisKelamin"
-        app:srcCompat="@drawable/laki_normal_light" />
+        style="@style/img_btn_lk"/>
 
     <ImageButton
         android:id="@+id/img_btn_wanita"
@@ -54,13 +55,12 @@
         android:layout_height="159dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="45dp"
-        android:background="@drawable/rounded_button_shape"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/img_btn_laki"
         app:layout_constraintTop_toBottomOf="@+id/tv_JenisKelamin"
-        app:srcCompat="@drawable/wanita_normal_light" />
+        style="@style/img_btn_wt" />
 
     <ImageButton
         android:id="@+id/img_btn_next"
@@ -76,31 +76,31 @@
         app:srcCompat="@drawable/btn_next" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/img_bg_usia"
         android:layout_width="307dp"
         android:layout_height="80dp"
         android:layout_marginTop="28dp"
-        android:background="@drawable/rounded_button_shape"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_usia"
-        app:srcCompat="@drawable/iv_bgusia" />
+        style="@style/img_bg_usia"/>
 
     <EditText
         android:id="@+id/et_usia"
         android:layout_width="75dp"
         android:layout_height="70dp"
         android:ems="2"
+        android:gravity="center"
         android:inputType="number"
         android:maxLength="3"
         android:text="0"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/img_bg_usia"
+        app:layout_constraintEnd_toEndOf="@+id/img_bg_usia"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/img_bg_usia"
+        app:layout_constraintTop_toTopOf="@+id/img_bg_usia"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
@@ -108,23 +108,21 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="30dp"
-        android:background="@drawable/rounded_button_shape"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/btn_min" />
+        app:layout_constraintBottom_toBottomOf="@+id/img_bg_usia"
+        app:layout_constraintStart_toStartOf="@+id/img_bg_usia"
+        app:layout_constraintTop_toTopOf="@+id/img_bg_usia"
+        style="@style/btn_min" />
 
     <ImageButton
         android:id="@+id/img_btn_plus"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginEnd="30dp"
-        android:background="@drawable/rounded_button_shape"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/btn_plus" />
+        app:layout_constraintBottom_toBottomOf="@+id/img_bg_usia"
+        app:layout_constraintEnd_toEndOf="@+id/img_bg_usia"
+        app:layout_constraintTop_toTopOf="@+id/img_bg_usia"
+        style="@style/btn_plus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,4 +10,5 @@
     <color name="bglightmode">#F3F3F3</color>
     <color name="bgdarkmode">#0A0E21</color>
     <color name="alltext_Light">#0A0E21</color>
+    <color name="allcard">#1A1F38</color>
 </resources>

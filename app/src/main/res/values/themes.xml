@@ -13,5 +13,75 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
     </style>
+
+    <!-- main activity -->
+    <!-- screen background -->
+    <style name="screen_light">
+        <item name="android:background">@color/bglightmode</item>
+    </style>
+
+    <!-- card view -->
+    <style name="card_view">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!-- tinggi-->
+    <style name="tv_tinggi">
+        <item name="android:textColor">@color/alltext_Light</item>
+    </style>
+
+    <!-- CM -->
+    <style name="tv_satuan_cm">
+        <item name="android:textColor">@color/alltext_Light</item>
+    </style>
+
+    <!-- berat -->
+    <style name="tv_berat">
+        <item name="android:textColor">@color/alltext_Light</item>
+    </style>
+
+    <!-- KG -->
+    <style name="tv_satuan_kg">
+        <item name="android:textColor">@color/alltext_Light</item>
+    </style>
+
+    <!-- welcome activity -->
+    <!-- pilih jenis kelamin -->
+    <style name="tv_pilih_jenis_kelamin">
+        <item name="android:textColor">@color/alltext_Light</item>
+    </style>
+    
+    <!-- img laki-laki -->
+    <style name="img_btn_lk">
+        <item name="android:background">@drawable/laki_normal_light</item>
+    </style>
+
+    <!-- img wanita -->
+    <style name="img_btn_wt">
+        <item name="android:background">@drawable/wanita_normal_light</item>
+    </style>
+
+    <!-- usia -->
+    <style name="tv_usia">
+        <item name="android:textColor">@color/alltext_Light</item>
+    </style>
+
+    <!-- img bg usia -->
+    <style name="img_bg_usia">
+        <item name="android:background">@drawable/rounded_button_shape</item>
+    </style>
+
+    <!-- btn min -->
+    <style name="btn_min">
+        <item name="android:background">@drawable/btn_min</item>
+    </style>
+
+    <!-- btn plus -->
+    <style name="btn_plus">
+        <item name="android:background">@drawable/btn_plus</item>
+    </style>
+
+
 </resources>
