@@ -9,6 +9,7 @@ class Welcome : AppCompatActivity() {
 
     var isLakiClicked = false
     var isWanitaClicked = false
+    var age = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,21 +21,42 @@ class Welcome : AppCompatActivity() {
 
 
 
-            //start img btn laki
+            //button gender
             img_btn_laki.setOnClickListener {
                 img_btn_laki.setImageDrawable(lakiClickedLight)
-                img_btn_wanita.setImageDrawable((wanitaUnclickedLight))
+                img_btn_wanita.setImageDrawable(wanitaUnclickedLight)
                 isLakiClicked = true
                 isWanitaClicked = false
-            }//end img btn laki
+            }
 
-            //start img btn wanita
             img_btn_wanita.setOnClickListener {
                     img_btn_wanita.setImageDrawable(wanitaClickedLight)
-                    img_btn_laki.setImageDrawable((lakiUnclickedLight))
+                    img_btn_laki.setImageDrawable(lakiUnclickedLight)
                 isWanitaClicked = true
                 isLakiClicked = false
-            }//end img btn wanita
+            }
+
+
+        var umur = et_usia.text.toString().toInt()
+
+        img_btn_plus.setOnClickListener {
+            if (umur < 99){
+                umur = et_usia.text.toString().toInt()
+                umur += 1
+                et_usia.setText(umur.toString())
+            }
+        }
+
+        img_btn_min.setOnClickListener {
+            if (umur > 1) {
+                umur = et_usia.text.toString().toInt()
+                umur -= 1
+                et_usia.setText(umur.toString())
+            }
+        }
+
+        age = umur
+
 
         img_btn_next.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
