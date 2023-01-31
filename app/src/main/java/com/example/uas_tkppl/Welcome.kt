@@ -40,7 +40,7 @@ class Welcome : AppCompatActivity() {
         var umur = et_usia.text.toString().toInt()
 
         img_btn_plus.setOnClickListener {
-            if (umur < 99){
+            if (umur < 110){
                 umur = et_usia.text.toString().toInt()
                 umur += 1
                 et_usia.setText(umur.toString())
