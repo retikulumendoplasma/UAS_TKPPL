@@ -24,18 +24,18 @@ class Result : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
 
-            val berat = intent.getIntExtra("berat", 0)
-            val tinggi = intent.getIntExtra("tinggi", 0)
+        val berat = intent.getIntExtra("berat", 0)
+        val tinggi = intent.getIntExtra("tinggi", 0)
 
-            val hasilBMI = berat.toFloat() / (tinggi.toFloat() * tinggi.toFloat() / 10000)
+        val hasilBMI = berat.toFloat() / (tinggi.toFloat() * tinggi.toFloat() / 10000)
 
-            val format1decimal = "%.1f".format(hasilBMI)
-            tv_score_bmi.setText(format1decimal)
+        val format1decimal = "%.1f".format(hasilBMI)
+        tv_score_bmi.setText(format1decimal)
 
 
-            img_btn_back.setOnClickListener {
-                finish()
-            }
+        img_btn_back.setOnClickListener {
+            finish()
+        }
 
 
     }
