@@ -109,4 +109,20 @@
         <item name="android:textColor">@color/alltext_Light</item>
     </style>
 
+    <!-- activity rekomendation -->
+    !-- tv saran -->
+    <style name="tv_saran">
+        <item name="android:textColor">@color/alltext_Light</item>
+    </style>
+
+    <!-- cv saran -->
+    <style name="cv_saran">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!-- tv hasil saran -->
+    <style name="tv_hasil_saran">
+        <item name="android:textColor">@color/alltext_Light</item>
+    </style>
+
 </resources>
