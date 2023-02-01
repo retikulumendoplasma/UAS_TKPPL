@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.tugas_tkkpl_e_call.helper.constant
 import com.example.tugas_tkkpl_e_call.helper.preferencesHelper
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_welcome.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         sharedPref = preferencesHelper(this)
 
+        tv_usiaWelcome.setText(sharedPref.getString(constant.PREF_AGE))
+        tv_jenisKelaminWelcome.setText(sharedPref.getString(constant.PREF_GENDER))
 
         fun CountResultBMI() {
             val berat = et_berat_badan.text.toString().toInt()
@@ -77,12 +76,21 @@ class MainActivity : AppCompatActivity() {
 
             R.id.Light_mode -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                sharedPref.clear()
+                sharedPref.putBoolean(constant.PREF_ISON,false)
             }
 
             R.id.Dark_mode -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                sharedPref.put(constant.PREF_ISON,true)
+                sharedPref.putBoolean(constant.PREF_ISON,true)
+            }
+
+            R.id.reset -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                sharedPref.clear()
+                val intent = Intent(this, Welcome::class.java)
+                finish()
+                startActivity(intent)
+
             }
 
         }

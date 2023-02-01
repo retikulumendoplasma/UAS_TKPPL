@@ -19,6 +19,11 @@ class Welcome : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         et_usia.setText("0")
+        if (sharedPref.getBoolean(constant.PREF_ISLOGIN) == true){
+            val intent = Intent(this, MainActivity::class.java)
+            finish()
+            startActivity(intent)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +51,7 @@ class Welcome : AppCompatActivity() {
 
                 img_btn_laki.setImageDrawable(lakiClickedDark)
                 img_btn_wanita.setImageDrawable(wanitaUnclickedDark)
+                sharedPref.putString(constant.PREF_GENDER,"Laki - laki")
                 isLakiClicked = true
                 isWanitaClicked = false
             }
@@ -53,6 +59,7 @@ class Welcome : AppCompatActivity() {
             img_btn_wanita.setOnClickListener {
                 img_btn_wanita.setImageDrawable(wanitaClickedDark)
                 img_btn_laki.setImageDrawable(lakiUnclickedDark)
+                sharedPref.putString(constant.PREF_GENDER,"Wanita")
                 isWanitaClicked = true
                 isLakiClicked = false
             }
@@ -62,6 +69,7 @@ class Welcome : AppCompatActivity() {
             img_btn_laki.setOnClickListener {
                 img_btn_laki.setImageDrawable(lakiClickedLight)
                 img_btn_wanita.setImageDrawable(wanitaUnclickedLight)
+                sharedPref.putString(constant.PREF_GENDER,"Laki - laki")
                 isLakiClicked = true
                 isWanitaClicked = false
             }
@@ -69,13 +77,13 @@ class Welcome : AppCompatActivity() {
             img_btn_wanita.setOnClickListener {
                 img_btn_wanita.setImageDrawable(wanitaClickedLight)
                 img_btn_laki.setImageDrawable(lakiUnclickedLight)
+                sharedPref.putString(constant.PREF_GENDER,"Wanita")
                 isWanitaClicked = true
                 isLakiClicked = false
             }
         }
 
 
-        var age = 0
 
         var umur = 0
         umur = et_usia.text.toString().toInt()
@@ -85,6 +93,7 @@ class Welcome : AppCompatActivity() {
                 umur = et_usia.text.toString().toInt()
                 umur += 1
                 et_usia.setText(umur.toString())
+                sharedPref.putString(constant.PREF_AGE,umur.toString())
             }
         }
 
@@ -93,14 +102,17 @@ class Welcome : AppCompatActivity() {
                 umur = et_usia.text.toString().toInt()
                 umur -= 1
                 et_usia.setText(umur.toString())
+                sharedPref.putString(constant.PREF_AGE,umur.toString())
             }
         }
 
-        age = umur
 
 
         img_btn_next.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            sharedPref.putBoolean(constant.PREF_ISLOGIN,true)
+            sharedPref.putString(constant.PREF_AGE,et_usia.text.toString())
+            finish()
             startActivity(intent)
         }
 
