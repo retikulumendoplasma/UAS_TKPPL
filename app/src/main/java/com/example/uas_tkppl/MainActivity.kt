@@ -85,8 +85,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.reset -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                sharedPref.clear()
+                sharedPref.putString(constant.PREF_GENDER, "")
+                sharedPref.putString(constant.PREF_AGE, "0")
+                sharedPref.putBoolean(constant.PREF_ISLOGIN, false)
                 val intent = Intent(this, Welcome::class.java)
                 finish()
                 startActivity(intent)

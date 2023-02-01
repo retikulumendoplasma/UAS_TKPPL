@@ -4,6 +4,7 @@ import android.app.UiModeManager.MODE_NIGHT_NO
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.tugas_tkkpl_e_call.helper.constant
 import com.example.tugas_tkkpl_e_call.helper.preferencesHelper
@@ -31,6 +32,8 @@ class Welcome : AppCompatActivity() {
         setContentView(R.layout.activity_welcome)
 
 
+
+
         //light
         val lakiClickedLight = resources.getDrawable(R.drawable.laki_pressed_light)
         val lakiUnclickedLight = resources.getDrawable(R.drawable.laki_normal_light)
@@ -43,6 +46,7 @@ class Welcome : AppCompatActivity() {
         val wanitaUnclickedDark = resources.getDrawable(R.drawable.wanita_black_dark)
 
         sharedPref = preferencesHelper(this)
+        sharedPref.putString(constant.PREF_GENDER, "")
 
         if (sharedPref.getBoolean(constant.PREF_ISON) == true){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
@@ -109,11 +113,20 @@ class Welcome : AppCompatActivity() {
 
 
         img_btn_next.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            sharedPref.putBoolean(constant.PREF_ISLOGIN,true)
+
             sharedPref.putString(constant.PREF_AGE,et_usia.text.toString())
-            finish()
-            startActivity(intent)
+
+            if(sharedPref.getString(constant.PREF_GENDER)=="" || sharedPref.getString(constant.PREF_AGE)=="0"){
+                Toast.makeText(this, "Jenis kelamin atau Umur belum diisi", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                val intent = Intent(this, MainActivity::class.java)
+                sharedPref.putBoolean(constant.PREF_ISLOGIN,true)
+
+                finish()
+                startActivity(intent)
+            }
+
         }
 
         }
