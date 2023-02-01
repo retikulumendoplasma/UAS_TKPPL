@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.tugas_tkkpl_e_call.helper.constant
 import com.example.tugas_tkkpl_e_call.helper.preferencesHelper
+import kotlinx.android.synthetic.main.activity_recomendation.*
 
 class Recomendation : AppCompatActivity() {
     lateinit var sharedPref: preferencesHelper
@@ -33,18 +34,18 @@ class Recomendation : AppCompatActivity() {
                 "Misalnya, jika kebutuhan asupan kalori Anda 2100 kkal per hari, usahakan untuk mengurangi jumlahnya sekitar 300-500 kkal. Biasanya Anda akan dianjurkan untuk mengurangi kalori harian sebanyak 5-15% dari kebutuhan sebelumnya."
 
 
-//        if (resikoJikaKurus == "kurus"){
-//            tv_hasil_resiko.setText(resikoKurus)
-//            tv_hasil_saran.setText(saranKurus)
-//        }
-//        else if (resikoJikaNormal == "normal"){
-//            tv_hasil_resiko.setText(resikoNormal)
-//            tv_hasil_saran.setText(saranNormal)
-//        }
-//        else if (resikoJikaGemuk == "gemuk"){
-//            tv_hasil_resiko.setText(resikoGemuk)
-//            tv_hasil_saran.setText(saranGemuk)
-//        }
+        if (resikoJikaKurus == "kurus"){
+            tv_hasil_resiko.setText(resikoKurus)
+            tv_hasil_saran.setText(saranKurus)
+        }
+        else if (resikoJikaNormal == "normal"){
+            tv_hasil_resiko.setText(resikoNormal)
+            tv_hasil_saran.setText(saranNormal)
+        }
+        else if (resikoJikaGemuk == "gemuk"){
+            tv_hasil_resiko.setText(resikoGemuk)
+            tv_hasil_saran.setText(saranGemuk)
+        }
 
 
         sharedPref = preferencesHelper(this)

@@ -1,5 +1,6 @@
 package com.example.uas_tkppl
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,21 +35,20 @@ class Result : AppCompatActivity() {
 
         if (hasilBMI < 18.5){
             jikaKurusNormalGemuk = "kurus"
-            intent.putExtra("jikakurus",jikaKurusNormalGemuk)
             tv_hasil_besar.setText("KURUS")
             tv_hasil_besar.setTextColor(Color.BLUE)
             tv_hasil_rincian.setText(kurus)
         }
         else if (hasilBMI >= 18.5 && hasilBMI <=24.9){
             jikaKurusNormalGemuk = "normal"
-            intent.putExtra("jikakurus",jikaKurusNormalGemuk)
+            intent.putExtra("jikanormal",jikaKurusNormalGemuk)
             tv_hasil_besar.setText("NORMAL")
             tv_hasil_besar.setTextColor(Color.GREEN)
             tv_hasil_rincian.setText(normal)
         }
         else{
             jikaKurusNormalGemuk = "gemuk"
-            intent.putExtra("jikakurus",jikaKurusNormalGemuk)
+            intent.putExtra("jikagemuk",jikaKurusNormalGemuk)
             tv_hasil_besar.setText("GEMUK")
             tv_hasil_besar.setTextColor(Color.RED)
             tv_hasil_rincian.setText(gemuk)
@@ -61,6 +61,29 @@ class Result : AppCompatActivity() {
 
         img_btn_back.setOnClickListener {
             finish()
+        }
+
+
+        btn_saran.setOnClickListener {
+            if (jikaKurusNormalGemuk == "kurus"){
+                jikaKurusNormalGemuk = "kurus"
+                val intent = Intent(this, Recomendation::class.java)
+                intent.putExtra("jikakurus",jikaKurusNormalGemuk)
+                startActivity(intent)
+            }
+            else if (jikaKurusNormalGemuk == "normal"){
+                jikaKurusNormalGemuk = "normal"
+                val intent = Intent(this, Recomendation::class.java)
+                intent.putExtra("jikanormal",jikaKurusNormalGemuk)
+                startActivity(intent)
+            }
+            else if (jikaKurusNormalGemuk == "gemuk"){
+                jikaKurusNormalGemuk = "gemuk"
+                val intent = Intent(this, Recomendation::class.java)
+                intent.putExtra("jikagemuk",jikaKurusNormalGemuk)
+                startActivity(intent)
+            }
+
         }
 
 

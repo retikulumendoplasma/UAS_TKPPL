@@ -109,7 +109,7 @@
 
     <!-- activity rekomendation -->
 
-    !-- tv saran -->
+    <!-- tv saran -->
     <style name="tv_saran">
         <item name="android:textColor">@color/white</item>
     </style>
