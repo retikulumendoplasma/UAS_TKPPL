@@ -19,6 +19,8 @@ class Result : AppCompatActivity() {
         val normal= "Nilai indeks massa tubuh Anda 18.5 sampai 24.9, artinya Anda memiliki berat badan normal"
         val kurus = "Nilai indeks massa tubuh (IMT) di bawah 18,5 menandakan berat badan Anda kurang"
 
+        var jikaKurusNormalGemuk = ""
+
         sharedPref = preferencesHelper(this)
 
         if (sharedPref.getBoolean(constant.PREF_ISON) == true) {
@@ -31,16 +33,22 @@ class Result : AppCompatActivity() {
         val hasilBMI = berat.toFloat() / (tinggi.toFloat() * tinggi.toFloat() / 10000)
 
         if (hasilBMI < 18.5){
+            jikaKurusNormalGemuk = "kurus"
+            intent.putExtra("jikakurus",jikaKurusNormalGemuk)
             tv_hasil_besar.setText("KURUS")
             tv_hasil_besar.setTextColor(Color.BLUE)
             tv_hasil_rincian.setText(kurus)
         }
         else if (hasilBMI >= 18.5 && hasilBMI <=24.9){
+            jikaKurusNormalGemuk = "normal"
+            intent.putExtra("jikakurus",jikaKurusNormalGemuk)
             tv_hasil_besar.setText("NORMAL")
             tv_hasil_besar.setTextColor(Color.GREEN)
             tv_hasil_rincian.setText(normal)
         }
         else{
+            jikaKurusNormalGemuk = "gemuk"
+            intent.putExtra("jikakurus",jikaKurusNormalGemuk)
             tv_hasil_besar.setText("GEMUK")
             tv_hasil_besar.setTextColor(Color.RED)
             tv_hasil_rincian.setText(gemuk)
