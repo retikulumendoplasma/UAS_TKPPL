@@ -1,5 +1,6 @@
 package com.example.uas_tkppl
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
@@ -28,6 +29,23 @@ class Result : AppCompatActivity() {
         val tinggi = intent.getIntExtra("tinggi", 0)
 
         val hasilBMI = berat.toFloat() / (tinggi.toFloat() * tinggi.toFloat() / 10000)
+
+        if (hasilBMI < 18.5){
+            tv_hasil_besar.setText("KURUS")
+            tv_hasil_besar.setTextColor(Color.BLUE)
+            tv_hasil_rincian.setText(kurus)
+        }
+        else if (hasilBMI >= 18.5 && hasilBMI <=24.9){
+            tv_hasil_besar.setText("NORMAL")
+            tv_hasil_besar.setTextColor(Color.GREEN)
+            tv_hasil_rincian.setText(normal)
+        }
+        else{
+            tv_hasil_besar.setText("GEMUK")
+            tv_hasil_besar.setTextColor(Color.RED)
+            tv_hasil_rincian.setText(gemuk)
+
+        }
 
         val format1decimal = "%.1f".format(hasilBMI)
         tv_score_bmi.setText(format1decimal)
