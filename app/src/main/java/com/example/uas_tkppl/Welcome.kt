@@ -41,6 +41,7 @@ class Welcome : AppCompatActivity() {
 
         if (sharedPref.getBoolean(constant.PREF_ISON) == true){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
             img_btn_laki.setOnClickListener {
 
                 img_btn_laki.setImageDrawable(lakiClickedDark)

@@ -84,4 +84,29 @@
     </style>
 
 
+    <!-- result activity -->
+    <style name="img_btn_back">
+        <item name="android:background">@drawable/btn_back</item>
+    </style>
+
+    <!-- tv_hasil -->
+    <style name="tv_hasil">
+        <item name="android:textColor">@color/alltext_Light</item>
+    </style>
+
+    <!-- img_bg_hasil -->
+    <style name="img_bg_hasil">
+        <item name="android:background">@drawable/bg_hasil</item>
+    </style>
+
+    <!-- tv_bmi_hasil -->
+    <style name="tv_bmi_hasil">
+        <item name="android:textColor">@color/alltext_Light</item>
+    </style>
+
+    <!-- tv_hasil_rincian -->
+    <style name="tv_hasil_rincian">
+        <item name="android:textColor">@color/alltext_Light</item>
+    </style>
+
 </resources>
