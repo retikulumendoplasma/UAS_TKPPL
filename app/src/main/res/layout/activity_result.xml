@@ -48,24 +48,24 @@
     <TextView
         android:id="@+id/tv_hasil_rincian"
         style="@style/tv_hasil_rincian"
-        android:layout_width="245dp"
-        android:layout_height="175dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="257dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/roboto_medium"
         android:text="Jika nilai indeks massa tubuh Anda 18.5 sampai 24.9, artinya Anda memiliki berat badan normal.  "
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_bg_hasil"
         app:layout_constraintEnd_toEndOf="@+id/img_bg_hasil"
-        app:layout_constraintHorizontal_bias="0.593"
-        app:layout_constraintStart_toStartOf="@+id/img_bg_hasil" />
+        app:layout_constraintStart_toStartOf="@+id/img_bg_hasil"
+        app:layout_constraintTop_toBottomOf="@+id/tv_score_bmi" />
+
     <TextView
         android:id="@+id/tv_score_bmi"
         style="@style/tv_bmi_hasil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="22dp"
         android:fontFamily="@font/roboto_bold"
         android:text="19.5"
         android:textSize="60sp"
@@ -78,7 +78,7 @@
         android:id="@+id/tv_hasil_besar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="30dp"
         android:text="NORMAL"
         android:textColor="#09FF7A"
         android:textSize="35sp"
@@ -86,4 +86,19 @@
         app:layout_constraintEnd_toEndOf="@+id/img_bg_hasil"
         app:layout_constraintStart_toStartOf="@+id/img_bg_hasil"
         app:layout_constraintTop_toTopOf="@+id/img_bg_hasil" />
+
+    <Button
+        android:id="@+id/btn_saran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Saran"
+        android:background="@drawable/btn_saran__radius"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hasil_rincian" />
 </androidx.constraintlayout.widget.ConstraintLayout>
